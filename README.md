@@ -13,7 +13,6 @@ Dự án cá nhân về quy trình ETL từ thu thập dữ liệu bóng cầu t
 ---
 ## 🏗️ Kiến trúc dự án
 
-<img width="1650" height="800" alt="Architecture" src="https://github.com/user-attachments/assets/e669aa2c-09e1-4381-bd31-ad6013c666f7" />
 
 ---
 ## 🧱 Cấu trúc dự án
@@ -61,19 +60,19 @@ etl_football/
 ---
 ## 📸 Hình ảnh minh họa
 ### Database schema (Postgres)
-<img width="950" height="550" alt="postgres_schema" src="https://github.com/user-attachments/assets/a8aa4c40-9857-4e9b-b705-eb14dab5a347" />
+
 
 ### dbt run
-<img width="862" height="463" alt="dbt_run" src="https://github.com/user-attachments/assets/35e55419-a003-4665-a869-7573b3a29a37" />
+
 
 ### Airflow DAGs
-<img width="950" height="550" alt="airflow_dags" src="https://github.com/user-attachments/assets/748637d2-1fd4-4787-82ec-52f13a21ddf9" />
+
 
 ### Power BI Overview Page (1)
-<img width="572" height="398" alt="powerbi_dashboard_overview" src="https://github.com/user-attachments/assets/b4d44317-e10d-48c0-9393-6ff07589445a" />
+
 
 ### Power BI Players Page (2)
-<img width="476" height="374" alt="powerbi_dashboard_players" src="https://github.com/user-attachments/assets/a0a5286c-b6ad-41fa-a55b-b7585c796895" />
+
 
 ---
 ## 🛠️ Công cụ
