@@ -1,0 +1,38 @@
+etl_football/
+│
+├── README.md
+│
+├── dbt_project/                	  # dbt setup ✅
+│   ├── dbt_project.yml
+│   ├── models/
+│		├── Staging
+│		│	├── stg_players.sql
+│		│	└── stg_schema.yml
+│		├── Intermediate
+│		│	├── int_players.sql
+│		│	└── int_schema.yml
+│		└── Marts
+│			├── marts_players.sql
+│			└── marts_schema.yml
+│
+├── airflow-docker                   # Airflow setup ✅
+│   ├── docker-compose.yml
+│   ├── Dockerfile
+│   ├── dags/
+│   └── scripts/
+│        ├── etl_premier_league.py
+│        ├── etl_laliga.py
+│        ├── etl_serie_a.py
+│        ├── etl_bundesliga.py
+│        └── etl_ligue_1.py
+│
+├── imgs/                         	  # Architecture, dashboards ✅
+│   ├── architecture.png
+│   ├── dbt_run.png
+│   ├── airflow_dags.png
+│   ├── postgres_schema.png
+│   ├── powerbi_dashboard_overview.png
+│   ├── powerbi_dashboard_players.png
+│   └── project_structure.png
+└──
+

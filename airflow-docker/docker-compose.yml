@@ -1,0 +1,91 @@
+x-airflow-common: &airflow-common
+  build:
+    context: .
+    dockerfile: dockerfile.dockerfile
+  environment:
+    - AIRFLOW__CORE__EXECUTOR=CeleryExecutor
+    - AIRFLOW__WEBSERVER__SECRET_KEY=Fpf5q50qQrW79berjvjaMw== #python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+    - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow:airflow@postgres/airflow
+    - AIRFLOW__CELERY__BROKER_URL=redis://:@redis:6379/0
+    - AIRFLOW__CORE__FERNET_KEY=7lK_uXYQGr2vQqJAgnD6UTfA0VuDncc-aFH7hhiQm18= #python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
+    - AIRFLOW__CORE__LOAD_EXAMPLES=False
+    - AIRFLOW__CORE__DAGS_FOLDER=/opt/airflow/dags
+    - BASE=https://www.transfermarkt.com/
+  volumes:
+    - ./dags:/opt/airflow/dags
+    - ./logs:/opt/airflow/logs
+    - ./plugins:/opt/airflow/plugins
+    - ./etl:/opt/airflow/etl
+  user: "${AIRFLOW_UID:-50000}:0"
+  depends_on:
+    postgres:
+      condition: service_healthy
+    redis:
+      condition: service_healthy
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U airflow"]
+      interval: 5s
+      retries: 5
+    restart: always
+  
+  redis:
+    image: redis:latest
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD","redis-cli","ping"]
+      interval: 5s
+      retries: 5
+    restart: always
+
+  airflow-init:
+    <<: *airflow-common
+    command: bash -c "airflow db init && airflow users create --username admin --password admin \
+      --firstname admin --lastname admin --role Admin --email vntkien011001@gmail.com"
+    restart: "no"
+
+  airflow-webserver:
+    <<: *airflow-common
+    command: webserver
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: ["CMD-SHELL", "[ -f /opt/airflow/airflow-webserver.pid ]"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+  airflow-scheduler:
+    <<: *airflow-common
+    command: scheduler
+    healthcheck:
+      test: ["CMD-SHELL", "[ -f /opt/airflow/airflow-scheduler.pid ]"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+  airflow-worker:
+    <<: *airflow-common
+    command: celery worker
+    healthcheck:
+      test: ["CMD-SHELL", "celery --app airflow.executors.celery_executor inspect ping -d celery@"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    restart: always
+
+volumes:
+  postgres_data:
+  redis_data:

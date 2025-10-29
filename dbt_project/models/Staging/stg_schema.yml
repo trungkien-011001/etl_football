@@ -1,0 +1,56 @@
+
+version: 2
+
+sources:
+  - name: postgres
+    database: football
+    schema: players
+    tables:
+      - name: premier_league_raw
+        description: "Storing raw data of Premier League players"
+
+      - name: laliga_raw
+        description: "Storing raw data of Laliga players"
+
+      - name: serie_a_raw
+        description: "Storing raw data of Serie A players"
+
+      - name: bundesliga_raw
+        description: "Sotring raw data of Bundesliga players"
+
+      - name: ligue_1_raw
+        description: "Storing raw data of Ligue 1 players"
+
+models:
+  - name: stg_players
+    columns:
+      - name: full_name
+        tests:
+          - not_null
+      - name: shirt_num
+        tests:
+          - not_null
+      - name: club
+        tests:
+          - not_null
+      - name: league
+        tests:
+          - not_null
+      - name: dob
+        tests:
+          - not_null
+      - name: place_of_birth
+        tests:
+          - not_null
+      - name: citizenship
+        tests:
+          - not_null
+      - name: height
+        tests:
+          - not_null
+      - name: position
+        tests:
+          - not_null
+      - name: market_value_euro
+      - name: market_value_last_update
+      - name: link

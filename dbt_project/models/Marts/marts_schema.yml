@@ -1,0 +1,51 @@
+
+version: 2
+
+models:
+  - name: marts_players
+    description: "Bảng marts tạm thời lấy giống bảng Intermediate vì chưa có nhu cầu"
+    columns:
+      - name: full_name
+        tests:
+          - not_null
+      - name: shirt_num
+        tests:
+          - not_null
+      - name: club
+        tests:
+          - not_null
+      - name: league
+        tests:
+          - not_null
+      - name: dob
+        tests:
+          - not_null
+      - name: place_of_birth
+        tests:
+          - not_null
+      - name: citizenship
+        tests:
+          - not_null
+      - name: height
+        tests:
+          - not_null
+      - name: position
+        tests:
+          - not_null
+      - name: market_value_euro
+      - name: market_value_last_update
+      - name: link
+        tests:
+          - not_null
+      - name: age
+        tests:
+          - not_null
+      - name: general_position
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['Goalkeeper', 'Defender', 'Midfielder', 'Forwarder']
+          - not_null
+      - name: national_type
+        tets:
+          - not_null
