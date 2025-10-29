@@ -1,4 +1,4 @@
-# Football Data ETL Pipeline
+# ETL Football Project
 Dự án cá nhân về quy trình ETL từ thu thập dữ liệu bóng cầu thủ đá từ trang thông tin chuyển nhượng Transfermarket bằng thư viện Selenium (Python), xử lí và làm sạch dữ liệu bằng Pandas và dbt, lưu trữ vào Hệ quản trị cơ sở dữ liệu (PostgreSQL) đến trực quan hóa dữ liệu bằng Microsoft Power BI
 
 ---
