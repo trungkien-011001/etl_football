@@ -5,7 +5,7 @@ Dự án cá nhân về quy trình ETL từ thu thập dữ liệu bóng cầu t
 
 ## ✅ Mô tả dự án
 - Crawl dữ liệu từ trang chủ đến trang đích (trang chứa dữ liệu cần thu thập)
-- Từ trang chủ (Home Page) -> Vào trang chứa thông tin các Giải đấu (COMPETITIONS) -> Lọc ra các giải đấu cần lấy (do mỗi trang giải đấu sẽ có đuôi url khác biệt, có thể xem trong Developer Tools) -> Vào từng giải đấu để lấy url của các CLB -> Vào từng CLB để lấy url của từng cầu thủ (tên, năm sinh, vị trí thi đấu, quốc tịch, clb chủ quản, giải đấu, số áo, giá trị chuyển nhượng, ngày cập nhật giá trị chuyển nhượng)
+- Từ trang chủ (Home Page) -> Vào trang chứa thông tin các Giải đấu (COMPETITIONS) -> Lọc ra các giải đấu cần lấy (do mỗi trang giải đấu sẽ có đuôi url khác biệt, có thể xem trong Developer Tools) -> Vào từng giải đấu để lấy url của các CLB -> Vào từng CLB để lấy url của từng cầu thủ -> Trích xuất thông tin cầu thủ (tên, năm sinh, vị trí thi đấu, quốc tịch, clb chủ quản, giải đấu, số áo, giá trị chuyển nhượng, ngày cập nhật giá trị chuyển nhượng)
 - Xử lí lỗi 403 bằng cách refresh trang sau 1 hàm delay ngẫu nhiên
 - Khai báo và lưu dữ liệu thô vào Hệ cơ sở dữ liệu
 - Xử lí dữ liệu thô thành dữ liệu sạch phụ vụ cho nhu cầu phân tích (reports/dashboards)
