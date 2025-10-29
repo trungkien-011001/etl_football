@@ -1,6 +1,8 @@
 etl_football/
 │
 ├── README.md
+├── structure.txt
+├── LICENSE
 │
 ├── dbt_project/                	  # dbt setup ✅
 │   ├── dbt_project.yml

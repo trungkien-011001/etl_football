@@ -21,6 +21,8 @@ Dự án cá nhân về quy trình ETL từ thu thập dữ liệu bóng cầu t
 etl_football/
 │
 ├── README.md
+├── structure.txt
+├── LICENSE
 │
 ├── dbt_project/                	 # dbt setup ✅
 │   ├── dbt_project.yml
