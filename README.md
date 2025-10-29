@@ -24,20 +24,20 @@ etl_football/
 ├── structure.txt
 ├── LICENSE
 │
-├── dbt_project/                	 # dbt setup ✅
+├── dbt_project/                	# dbt setup ✅
 │   ├── dbt_project.yml
 │   ├── models/
-│	  ├── Staging
+│	  ├── Staging/
 │	  │	 ├── stg_players.sql
 │	  │	 └── stg_schema.yml
-│	  ├── Intermediate
+│	  ├── Intermediate/
 │	  │	 ├── int_players.sql
 │	  │	 └── int_schema.yml
-│	  └── Marts
+│	  └── Marts/
 │		 ├── marts_players.sql
 │		 └── marts_schema.yml
 │
-├── airflow-docker                  # Airflow setup ✅
+├── airflow-docker/                  # Airflow setup ✅
 │   ├── docker-compose.yml
 │   ├── Dockerfile
 │   ├── dags/
