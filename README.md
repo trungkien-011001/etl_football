@@ -12,7 +12,7 @@ Dự án cá nhân về quy trình ETL từ thu thập dữ liệu bóng cầu t
 
 ---
 ## 🏗️ Kiến trúc dự án
-
+![Architecture](https://github.com/trungkien-011001/etl_football/blob/main/imgs/architecture.png)
 
 ---
 ## 🧱 Cấu trúc dự án
@@ -32,8 +32,8 @@ etl_football/
 │	  │	 ├── int_players.sql
 │	  │	 └── int_schema.yml
 │	  └── Marts
-│			 ├── marts_players.sql
-│			 └── marts_schema.yml
+│		 ├── marts_players.sql
+│		 └── marts_schema.yml
 │
 ├── airflow-docker                  # Airflow setup ✅
 │   ├── docker-compose.yml
@@ -60,19 +60,19 @@ etl_football/
 ---
 ## 📸 Hình ảnh minh họa
 ### Database schema (Postgres)
-
+![postgres_schema](https://github.com/trungkien-011001/etl_football/blob/main/imgs/postgres_schema.png)
 
 ### dbt run
-
+![dbt_run](https://github.com/trungkien-011001/etl_football/blob/main/imgs/dbt_run.png)
 
 ### Airflow DAGs
-
+![Airflow_DAGS](https://github.com/trungkien-011001/etl_football/blob/main/imgs/airflow_dags.png)
 
 ### Power BI Overview Page (1)
-
+![pbi_1](https://github.com/trungkien-011001/etl_football/blob/main/imgs/powerbi_dashboard_overview.png)
 
 ### Power BI Players Page (2)
-
+![pbi_2](https://github.com/trungkien-011001/etl_football/blob/main/imgs/powerbi_dashboard_players.png)
 
 ---
 ## 🛠️ Công cụ
